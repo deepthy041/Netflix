@@ -1,0 +1,57 @@
+<div class="container">
+  <div class="header">
+    <!-- //Banner Area -->
+    <div class="header_banner" [ngStyle]="{
+      'background-image':'linear-gradient(rgba(0,0,0,0.8),rgba(0,0,0,0.3)),url('+headerBGUrl+')'}">
+      <h2>{{trending?.results[5].title}}</h2>
+      <div class="header_buttons"
+      >
+        <button class="play-button">
+          <mat-icon>arrow_right</mat-icon>
+          <span>Play</span>
+        </button>
+        <button class="more-button">
+          <mat-icon>info</mat-icon>
+          <span>More Info</span>
+        </button>
+      </div>
+
+    </div> 
+    <!-- Banner End Here -->
+
+    <!-- Main Area -->
+    <div class="header_main" id="stickyHeader" [class.sticky]="sticky" #stickHeader>
+     <div class="header_left">
+      <a routerLink="/">
+        <img src="assets/netflix.svg" alt="logo">
+      </a>
+      <ul>
+        <li class="active"><a href="#">Home</a></li>
+        <li><a href="#">Tv Shows</a></li>
+        <li><a href="#">Movies</a></li>
+        <li><a href="#">Latest</a></li>
+        <li><a href="#">My List</a></li>
+      </ul>
+      
+     </div> 
+     <div class="header_right">
+      <ul>
+        <li><a href="#"><mat-icon>search</mat-icon></a></li>
+        <li><a href="#">children</a></li>
+        <li><a href="#"><mat-icon>card_giftcard</mat-icon></a></li>
+        <li><a href="#"><mat-icon>notification</mat-icon></a></li>
+        <li><img style="width: 30px;" src="https://yt3.ggpht.com/yti/AJo0G0kXs0QwIeNH7xvE5ltt9i5ryKoVZm8d50moTg=s88-c-k-c0x00ffffff-no-rj-mo" alt="avatar"></li>
+      </ul>
+     </div>
+    </div>
+    <!-- Header main end here -->
+  </div>
+  <div class="body" style="margin-top:38rem;">
+  <app-slider title="TRENDING" [movies]="trending" [sliderConfig]="sliderConfig"></app-slider>
+  <app-slider title="TOP RATED" [movies]="topRated" [sliderConfig]="sliderConfig"></app-slider>
+  <app-slider title="NOW PLAYING" [movies]="nowPlaying" [sliderConfig]="sliderConfig"></app-slider>
+  <app-slider title="ORIGINALS" [movies]="originals" [sliderConfig]="sliderConfig"></app-slider>
+  <app-slider title="POPULAR" [movies]="popular" [sliderConfig]="sliderConfig"></app-slider>
+  </div>
+  
+</div>
